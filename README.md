@@ -31,7 +31,7 @@ Got it! Here’s your **Setup and Usage** section written in that style, tailore
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/yourusername/know-your-age.git](https://github.com/kartik-paliwa1/Know-Your-Age)
+   git clone https://github.com/kartik-paliwa1/Know-Your-Age
    cd Know-Your-Age
    ```
 
