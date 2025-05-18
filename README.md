@@ -37,15 +37,20 @@ Overall, this project provides a practical, beginner-friendly example of contain
 Example `Dockerfile`:
 
 ```Dockerfile
-FROM golang:1.20
+#Pull a base image which gives all required tools and libraries
+FROM golang:1.20-alpine
 
+#Create a folder where the app code will be stored
 WORKDIR /app
 
+#Copy the source code from your Host machine to your container
 COPY . .
 
-RUN go build -o my-go-app
+#Compile the application code
+RUN go build -o age-calculator Main.go
 
-CMD ["./my-go-app"]
+#Run the application
+CMD ["./age-calculator"]
 ```
 
 ---
@@ -53,43 +58,22 @@ CMD ["./my-go-app"]
 ### 🛠️ Step 3: Build the Docker Image
 
 ```bash
-docker build -t my-go-app-image .
+docker build -t age-calculator .
 ```
 
-* `-t my-go-app-image`: Tags the image with a custom name
+* `-t age-calculator`: Tags the image with a custom name
 * `.`: Refers to the current directory as the Docker context
 
 ---
 
 ### ▶️ Step 4: Run the Docker Container
 
-#### If your app is CLI-based (e.g., takes input):
 
 ```bash
-docker run -it my-go-app-image
+docker run -it age-calculator
 ```
 
-#### If it's a web/API app that listens on a port (e.g., `:8080`):
-
-```bash
-docker run -p 8080:8080 my-go-app-image
-```
-
----
-
-### 🔍 Optional: Verify Image and Container
-
-List all images:
-
-```bash
-docker images
-```
-
-List all running containers:
-
-```bash
-docker ps
-```
+When prompted, enter your birth year inside the container and see your age output.
 
 ---
 
