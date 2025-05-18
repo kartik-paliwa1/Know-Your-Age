@@ -76,10 +76,3 @@ docker run -it age-calculator
 When prompted, enter your birth year inside the container and see your age output.
 
 ---
-
-Let me know if you'd like to add Docker volumes, environment variables, or build using a multi-stage setup!
-
-
-3. When prompted, enter your birth year inside the container and see your age output.
-
-More improvements and additions like logging, user input validation, or even deploying to cloud platforms can be explored in future iterations of this project.
