@@ -1,5 +1,5 @@
 # Know-Your-Age
-A fun little project to find out how old you are — and how to Dockerize a Go app while you're at it!
+## A fun little project to find out how old you are — and how to Dockerize a Go app while you're at it!
 
 This is a basic Go lang project that shows your age if you know your birth year. In this, you have to input your birth year, and it will take the current year automatically.
 By using the formula Current Year - Birth Year, it shows your current age.
@@ -20,7 +20,6 @@ The project will also serve as a base to practice Docker fundamentals like:
 
 Overall, this project provides a practical, beginner-friendly example of containerizing a simple application — making it a great starting point for learning Docker and DevOps workflows.
 
-Got it! Here’s your **Setup and Usage** section written in that style, tailored for your Go age calculator project starting from Docker setup:
 
 ---
 
