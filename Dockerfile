@@ -1,5 +1,5 @@
 #Pull a base image which gives all required tools and libraries
-From golang:1.20-alpine
+FROM golang:1.20-alpine
 
 #Create a folder where the app code will be stored
 WORKDIR /app
