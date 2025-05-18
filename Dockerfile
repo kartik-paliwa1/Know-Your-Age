@@ -5,7 +5,7 @@ FROM golang:1.20-alpine
 WORKDIR /app
 
 #Copy the source code from your Host machine to your container
-COPY Age Project/Main.go /app/Main.go
+COPY . .
 
 #Compile the application code
 RUN go build -o age-calculator Main.go
