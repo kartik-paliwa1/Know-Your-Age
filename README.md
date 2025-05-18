@@ -25,38 +25,76 @@ Overall, this project provides a practical, beginner-friendly example of contain
 
 ## Setup and Usage
 
-### Running Locally
-
-1. Clone the repository:
+### 📝 Step 1: Clone the repository:
 
    ```bash
    git clone https://github.com/kartik-paliwa1/Know-Your-Age
    cd Know-Your-Age
    ```
 
-2. Run the Go program:
+### 📝 Step 2: Create a `Dockerfile`:
 
-   ```bash
-   go run Main.go
-   ```
+Example `Dockerfile`:
 
-3. Follow the prompt to enter your birth year and see your calculated age.
+```Dockerfile
+FROM golang:1.20
+
+WORKDIR /app
+
+COPY . .
+
+RUN go build -o my-go-app
+
+CMD ["./my-go-app"]
+```
 
 ---
 
-### Running with Docker
+### 🛠️ Step 3: Build the Docker Image
 
-1. Build the Docker image:
+```bash
+docker build -t my-go-app-image .
+```
 
-   ```bash
-   docker build -t Know-Your-Age .
-   ```
+* `-t my-go-app-image`: Tags the image with a custom name
+* `.`: Refers to the current directory as the Docker context
 
-2. Run the container interactively:
+---
 
-   ```bash
-   docker run -it Know-Your-Age
-   ```
+### ▶️ Step 4: Run the Docker Container
+
+#### If your app is CLI-based (e.g., takes input):
+
+```bash
+docker run -it my-go-app-image
+```
+
+#### If it's a web/API app that listens on a port (e.g., `:8080`):
+
+```bash
+docker run -p 8080:8080 my-go-app-image
+```
+
+---
+
+### 🔍 Optional: Verify Image and Container
+
+List all images:
+
+```bash
+docker images
+```
+
+List all running containers:
+
+```bash
+docker ps
+```
+
+---
+
+Let me know if you'd like to add Docker volumes, environment variables, or build using a multi-stage setup!
+
 
 3. When prompted, enter your birth year inside the container and see your age output.
 
