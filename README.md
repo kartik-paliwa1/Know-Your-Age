@@ -72,7 +72,6 @@ docker build -t age-calculator .
 ```bash
 docker run -it age-calculator
 ```
-
 When prompted, enter your birth year inside the container and see your age output.
 
 ---
