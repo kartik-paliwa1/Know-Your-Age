@@ -1,0 +1,14 @@
+#Pull a base image which gives all required tools and libraries
+From golang:1.20-alpine
+
+#Create a folder where the app code will be stored
+WORKDIR /app
+
+#Copy the source code from your Host machine to your container
+COPY Age Project/Main.go /app/Main.go
+
+#Compile the application code
+RUN go build -o age-calculator Main.go
+
+#Run the application
+CMD ["./age-calculator"]
