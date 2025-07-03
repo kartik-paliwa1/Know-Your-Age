@@ -16,7 +16,7 @@ func main() {
 	age := currentYear - birthYear
 
 	if age < 0 {
-		fmt.Println("Hmm, you entered a future year 🤔")
+		fmt.Println("You entered a future year ")
 	} else {
 		fmt.Printf("You are approximately %d years old.\n", age)
 		fmt.Println("Current year is:", currentYear)
